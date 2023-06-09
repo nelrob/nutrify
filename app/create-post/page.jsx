@@ -31,6 +31,7 @@ const CreatePost = () => {
 
       if (response.ok) {
         router.push("/");
+        alert('post created');
       }
     } catch (error) {
       console.log(error);

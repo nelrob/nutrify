@@ -5,7 +5,7 @@ import Nav from '@components/Nav';
 import Provider from '@components/Provider';
 export const metadata = {
     title: "Nutrify",
-    description: 'Nurture yourself and others'
+    description: 'Nurture yourself and inspire others'
 }
 
 const RootLayout = ({children}) => {
