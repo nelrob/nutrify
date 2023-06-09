@@ -5,14 +5,11 @@ let isConnected = false; // track connection status
 export const connectToDB = async () => {
     mongoose.set('strictQuery', true);
 
-    if(isConnected) {
-        console.log('MongoDB is connected');
-        return;
-    } 
-
     try { 
         const { connection } = await mongoose.connect(process.env.MONGODB_URI, {
-            dbName: "share_post",
+            dbName: "share_prompt",
+            // useNewUrlParser: true, 
+            // useUnifiedTopoloogy: true,
         }); 
         isConnected = true; 
         
