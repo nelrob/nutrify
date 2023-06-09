@@ -45,7 +45,6 @@ const Nav = () => {
                             src={session?.user.image}
                             width={37}
                             height={37}
-                            className='rounded-full'
                             alt="Profile Image"
                             onClick={() => setToggleDropdown((prev)=> !prev)}
                             />
@@ -78,7 +77,6 @@ const Nav = () => {
                             src={session?.user.image}
                             width={37}
                             height={37}
-                            className='rounded-full'
                             alt="Profile Image"
                             onClick={() => setToggleDropdown((prev)=> !prev)}
                             />

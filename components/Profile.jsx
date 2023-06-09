@@ -1,4 +1,3 @@
-
 import PromptCard from './PromptCard';
 import React from 'react'
 import { useState } from 'react';
@@ -12,7 +11,6 @@ const Profile = ({name, desc, data, handleEdit, handleDelete}) => {
       <p className='desc text-left'>{desc}</p>
 
       <div className='mt-10 prompt_layout'>
-        {console.log("hi you've gotten this far")}
         {data.map((post) => (
           <PromptCard
             key={post._id}

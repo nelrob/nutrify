@@ -31,7 +31,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             alt='user_image'
             width={40}
             height={40}
-            className='rounded-full object-contain'
+            className='object-contain'
           />
           {/* username and email */}
           <div className='flex flex-col'>
