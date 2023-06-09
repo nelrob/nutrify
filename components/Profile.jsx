@@ -1,6 +1,5 @@
 import PromptCard from './PromptCard';
-import React from 'react'
-import { useState } from 'react';
+import React from 'react';
 
 const Profile = ({name, desc, data, handleEdit, handleDelete}) => {
   return (

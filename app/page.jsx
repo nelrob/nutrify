@@ -1,8 +1,10 @@
 import Feed from '@components/Feed';
+import Favicon from "react-favicon";
 
 const Home = () => {
     return (
         <section className="w-full flex-center flex-col">
+            <Favicon src="public/assets/icons/logo.ico"/>
             <h1 className="head_text text-center">
                 Nurture yourself;
                 <br className="max-md:hidden"/>
