@@ -1,18 +1,1 @@
-self.__RSC_CSS_MANIFEST={
-  "cssImports": {
-    "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\layout.jsx": [
-      "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"
-    ]
-  },
-  "cssModules": {
-    "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\page": [
-      "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"
-    ],
-    "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\create-post\\page": [
-      "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"
-    ],
-    "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\profile\\[id]\\page": [
-      "C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"
-    ]
-  }
-}
+self.__RSC_CSS_MANIFEST={"cssImports":{"C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\layout.jsx":["C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"]},"cssModules":{"C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\page":["C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"],"C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\create-post\\page":["C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"],"C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\my-profile\\page":["C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"],"C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\update-post\\page":["C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"],"C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\app\\profile\\[id]\\page":["C:\\Users\\melcodxb\\Desktop\\Web Apps\\src\\nutrify\\styles\\globals.css"]}}
