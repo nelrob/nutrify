@@ -26,16 +26,18 @@ const CreatePost = () => {
           prompt: post.prompt,
           userId: session?.user.id,
           tag: post.tag,
+          date: post.date,
         }),
       });
 
-      if (response.ok) {
-        router.push("/");
-        alert('post created');
-      }
+      // Post confirmation
+      console.log(response.ok);
+      alert('Post created!');
     } catch (error) {
       console.log(error);
     } finally {
+      // redirect back to home page
+      router.push("/")
       setIsSubmitting(false);
     }
   };

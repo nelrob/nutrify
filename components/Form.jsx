@@ -54,10 +54,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             type='submit'
             disabled={submitting}
             className='px-5 py-1.5 text-sm bg-green-600 text-white'
-            onClick={location.href='/'}
           >
-            {/* can change to edit/create for other functions */}
-            {submitting ? `${type}ing...` : type}
+            {submitting ? `${type}ing...`: type}
           </button>
         </div>
       </form>
