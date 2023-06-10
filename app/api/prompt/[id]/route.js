@@ -4,9 +4,10 @@ import Prompt from '@models/prompt';
 export const GET = async (req, {params}) => {
     try {
         await connectToDB;
-        // find prompt
+        // Find post in DB
         const prompt = await Prompt.findById(params.id).populate('creator');
         
+        // error
         if (!prompt) return new Response('Prompt not found.', {status: 404});
         return new Response(JSON.stringify(prompt), {status: 200});
     } catch (error) {
@@ -19,11 +20,11 @@ export const PATCH = async (req, {params}) => {
 
     try {
         await connectToDB();
-        // find existing prompt
+        // Find existing post
         const existingPrompt = await Prompt.findById(params.id);
 
         if(!existingPrompt) return new Response('Prompt not found.', {status: 404});
-        // update with new data
+        // Update with new data
         existingPrompt.prompt = prompt;
         existingPrompt.tag = tag;
 
@@ -39,7 +40,7 @@ export const DELETE = async (req, { params }) => {
     try {
         await connectToDB();
 
-        // Find the prompt by ID and remove it
+        // Find the post by ID and remove it
         await Prompt.findByIdAndRemove(params.id);
 
         return new Response("Prompt deleted successfully.", { status: 200 });

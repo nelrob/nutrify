@@ -17,9 +17,11 @@ const CreatePost = () => {
 
   const createPrompt = async (e) => {
     e.preventDefault();
+    // button loader
     setIsSubmitting(true);
 
     try {
+      // add post to DB
       const response = await fetch("/api/prompt/new", {
         method: "POST",
         body: JSON.stringify({

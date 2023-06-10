@@ -22,7 +22,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
 const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
 
-// Search states
+  // Search states
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
@@ -50,7 +50,7 @@ const Feed = () => {
 
   const handleSearchChange = (e) => {
     clearTimeout(searchTimeout);
-    setSearchText(e.target.value);
+    setSearchText(e.target.value); // set search text to input 
 
     // debounce method
     setSearchTimeout(
@@ -61,6 +61,7 @@ const Feed = () => {
     );
   };
 
+  // when tag is clicked, set the tag's text in search
   const handleTagClick = (tagName) => {
     setSearchText(tagName);
 

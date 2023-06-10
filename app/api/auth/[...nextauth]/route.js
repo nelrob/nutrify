@@ -8,6 +8,7 @@ connectToDB();
 
 const handler = NextAuth({
     providers: [
+        // Google OAuth provider
         GoogleProvider({
         clientId: process.env.GOOGLE_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
@@ -23,13 +24,15 @@ const handler = NextAuth({
             })
 
             session.user.id = sessionUser.id.toString();
-
             return session;
         },
-        async signIn({ profile }) {
-        // Check if a user already exists
-        const userExists = await User.findOne({ email: profile.email });
 
+        // Sign in callback
+        async signIn({ profile }) {
+        // Check if a user already exists in the DB
+        const userExists = await User.findOne({ email: profile.email });
+            
+        // if  not, create a new user
         if (!userExists) {
             await User.create({
             email: profile.email,
@@ -38,7 +41,8 @@ const handler = NextAuth({
             });
         }
 
-        return true; // Allow sign in
+        // if they do, allow sign in
+        return true; 
         },
     },
 });
