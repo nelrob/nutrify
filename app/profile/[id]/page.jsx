@@ -1,38 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 import Profile from "@components/Profile";
 
-const UserProfile = (userId) => {
-  const [posts, setPosts] = useState([]);
-  const router = useRouter();
+const UserProfile = ({ params }) => {
+    const searchParams = useSearchParams();
+    const userName = searchParams.get("name");
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${userId}/posts`);
-      const data = await response.json();
-      setPosts(data);
-      console.log(`----------- fetched ${userId}'s prompts`)
-      
-    };
+    const [posts, setPosts] = useState([]);
 
-    if (userId) return fetchPosts(userId);
-    try {
-      
-    } catch (error) {
-      console.log(error);
-    }
-  }, userId);
-  
-  return (
-    <Profile
-      name={`${userId}'s`}
-      desc={`Here is what ${userId} has shared with others.`}
-      data={posts}
-    />
-  );
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const response = await fetch(`/api/users/${params?.id}/posts`);
+            const data = await response.json();
+            console.log(`fetched ${params?.id}'s data`)
+            setPosts(data);
+        };
+
+        if (params?.id) fetchPosts();
+    }, [params.id]);
+
+    return (
+        <Profile
+            name={`${userName}'s`}
+            desc={`Here is what ${userName} has shared with the world.`}
+            data={posts}
+        />
+    );
 };
 
 export default UserProfile;
