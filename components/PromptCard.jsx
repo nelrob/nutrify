@@ -9,11 +9,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const router = useRouter();
 
   const handleProfileClick = () => {
-    console.log(post);
-
-    if (post.creator._id === session?.user.id) return router.push("/profile");
-
-    router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+    // if post's creator is the user, show my-profile page
+    if (post.creator._id === session?.user.id) return router.push("/my-profile");
+    // if post's creator is another user, show profile-[id] page
+    return router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
   };
 
   return (
@@ -39,7 +38,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
               {post.creator.username}
             </h3>
             <p className='font-inter text-sm text-gray-500'>
-              {post.creator.email}
+                {post.date}
             </p>
           </div>
 
@@ -52,7 +51,6 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
-        {/* change to add # to every tag */}
         #{post.tag}
       </p>
       

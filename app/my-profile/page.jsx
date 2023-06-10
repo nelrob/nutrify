@@ -49,7 +49,7 @@ const MyProfile = () => {
   return (
     <Profile
       name="Your"
-      desc="Here are the things you've shared with others."
+      desc="Here is what you've shared with others."
       data={posts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}

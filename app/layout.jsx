@@ -3,14 +3,18 @@ import '@styles/globals.css';
 
 import Nav from '@components/Nav';
 import Provider from '@components/Provider';
+
 export const metadata = {
     title: "Nutrify",
-    description: 'Nurture yourself and inspire others'
+    description: 'Nurture yourself and inspire others.'
 }
 
 const RootLayout = ({children}) => {
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" type="image/x-icon" href="./public/assets/icons/logo.ico" />
+            </head>
             <body>
                 <Provider>
                     <div className="main">

@@ -1,15 +1,20 @@
 import { connectToDB } from "@utils/database";
 import Prompt from '@models/prompt';
+import dayjs from "dayjs";
+import localizedFormat from 'dayjs/plugin/localizedFormat';
 
 export const POST = async (req) => {
     const {userId, prompt, tag} = await req.json();
-
+    const postDate = new Date().toLocaleString() + "";
+    dayjs.extend(localizedFormat);
+    
     try {
         await connectToDB();
         const newPrompt = new Prompt({
             creator: userId,
             prompt,
-            tag
+            tag,
+            date: dayjs(postDate).format('LLL'),
         })
 
         await newPrompt.save();
