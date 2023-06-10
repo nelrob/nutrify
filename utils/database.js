@@ -1,3 +1,4 @@
+import { productionBrowserSourceMaps } from "@next.config";
 import mongoose from "mongoose";
 
 let isConnected = false; // track connection status 
@@ -7,7 +8,7 @@ export const connectToDB = async () => {
 
     try { 
         const { connection } = await mongoose.connect(process.env.MONGODB_URI, {
-            dbName: "share_post",
+            dbName: process.env.MONGODB_DB,
             // useNewUrlParser: true, 
             // useUnifiedTopoloogy: true,
         }); 
