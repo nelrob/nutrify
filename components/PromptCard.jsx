@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
+import MyProfile from '@app/my-profile/page';
 
 const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
@@ -55,7 +56,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
       </p>
       
       {/* check if currently logged in user is creator of the post & they're on profile page*/}
-      {session?.user.id === post.creator._id && pathName === "/profile" && (
+      {session?.user.id === post.creator._id && pathName === "/my-profile" && (
         <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
           <p
             className='font-inter text-sm text-amber-600 cursor-pointer'

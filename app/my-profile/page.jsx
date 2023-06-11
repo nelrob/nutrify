@@ -41,6 +41,7 @@ const MyProfile = () => {
           method: "DELETE",
         });
 
+        // Update posts feed to remove deleted post 
         const filteredPosts = myPosts.filter((item) => item._id !== post._id);
 
         setMyPosts(filteredPosts);
