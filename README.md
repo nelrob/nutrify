@@ -2,7 +2,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install all project dependencies in the root directory:
+
+```
+npm install
+```
+
+To get the proper JWT's,
+- Configure a new GoogleOAuth from the Google Cloud API
+- Create a MongoDB database with the "drivers" configuration 
+
+Create an `.env` file with all the following keys (ignore the <>'s):
+```
+GOOGLE_CLIENT_ID=<GOOGLE_CLIENT_ID>
+GOOGLE_SECRET_ID=<GOOGLE_SECRET_ID>
+MONGODB_URI=<MONGODB_URI>
+MONGODB_DB=<DATABASE_NAME>
+NEXTAUTH_URL=<BASE_URL> // can be http://localhost:3000
+NEXTAUTH_URL_INTERNAL=<BASE_URL> // can be http://localhost:3000
+NEXTAUTH_SECRET=<SECRET> // generate one using openssl (`openssl rand -base64 32`)
+```
+  
+Then run the development server:
 
 ```bash
 npm run dev
@@ -14,7 +35,6 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
